@@ -1,6 +1,6 @@
 const db = require('../data/dbConfig');
 
-const table = 'posts';
+const table = 'users';
 
 function find() {
   return db(table);
