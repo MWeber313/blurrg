@@ -12,7 +12,7 @@ const Mutation = new GraphQLObjectType({
       args: {
         title: { type: GraphQLString },
         body: { type: new GraphQLNonNull(GraphQLString) },
-        create: { type: new GraphQLNonNull(GraphQLString) },
+        created: { type: new GraphQLNonNull(GraphQLString) },
         userId: { type: new GraphQLNonNull(GraphQLID) }
       },
       resolve(parent, args) {
@@ -31,16 +31,16 @@ const Mutation = new GraphQLObjectType({
     updatePost: {
       type: PostType,
       args: {
+        id: { type: new GraphQLNonNull(GraphQLID) },
         title: { type: GraphQLString },
-        body: { type: new GraphQLNonNull(GraphQLString) },
-        create: { type: new GraphQLNonNull(GraphQLString) },
-        userId: { type: new GraphQLNonNull(GraphQLID) }
+        body: { type: new GraphQLNonNull(GraphQLString) }
+        // created: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve(parent, args) {
         return Post.update(args.id, args)
           .then(res => {
             if (res) {
-              return res;
+              return args;
             }
             return new Error('Post could not be updated');
           })
