@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "Jason Loomis",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
