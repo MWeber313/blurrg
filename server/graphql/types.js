@@ -35,7 +35,7 @@ const PostType = new GraphQLObjectType({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
     body: { type: new GraphQLNonNull(GraphQLString) },
-    create: { type: new GraphQLNonNull(GraphQLString) },
+    created: { type: new GraphQLNonNull(GraphQLString) },
     userId: { type: new GraphQLNonNull(GraphQLID) },
     user: {
       type: UserType,
